@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  database:
+    image: postgres
+    container_name: db_docker
+    restart: always
+    environment:
+      - POSTGRES_USER=user_db
+      - POSTGRES_PASSWORD=senha_segura
+      - POSTGRES_DB=web
+    volumes:
+      - pgdata:/data/postgres
+
+volumes:
+  pgdata:
