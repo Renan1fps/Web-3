@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/user-list.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Lista de Usuários</title>
+</head>
+
+<body>
+    <header class="header-main">
+        <div class="dropdown">
+            <div class="profile-circle" id="profileCircle">
+                <img src="./public/coringado.jpeg" alt="Sua Foto">
+            </div>
+            <div class="dropdown-content">
+                <a id="create-anime" href="./main.html">Inicio</a>
+                <a id="create-anime" href="./create-anime.html">Cadastro animes</a>
+                <a href="./index.html">Logout</a>
+            </div>
+        </div>
+        <div class="site-name">MMR animes</div>
+    </header>
+    <div class="container">
+        <div class="header">
+            <h1>Usuários</h1>
+            <button id="addUserBtn">Cadastrar Novo Usuário</button>
+        </div>
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Perfil</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="userModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeUserModal">&times;</span>
+            <h2>Detalhes do Usuário</h2>
+        </div>
+    </div>
+
+    <div id="addUserModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeAddUserModal">&times;</span>
+            <h2>Cadastrar Novo Usuário</h2>
+            <label for="newUserName">Nome:</label>
+            <input type="text" id="newUserName" name="newUserName" required>
+
+            <label for="newUserEmail">Email:</label>
+            <input type="email" id="newUserEmail" name="newUserEmail" required>
+
+            <label for="newUserPassword">Senha:</label>
+            <input type="password" id="newUserPassword" name="newUserPassword" required>
+
+            <label for="newUserProfile">Perfil:</label>
+            <input type="text" id="newUserProfile" name="newUserProfile" required>
+
+            <button id="submitNewUser">Cadastrar</button>
+        </div>
+    </div>
+
+    <script src="./js/user.js"></script>
+</body>
+
+</html>

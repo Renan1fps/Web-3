@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POC Firebase - Login com Google</title>
-    <script  type="module"  src="./auth.js"></script>
+    <script type="module" src="./js/auth.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
 </head>
-
 <body>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-    <h1>POC Firebase - Login com Google</h1>
-    <button id="btn_auth">Login com Google</button>
-
+    <div class="container-login">
+        <div class="header-login">
+            <h1>Log In</h1>
+        </div>
+        <label for="in-login" class="label-login">Email</label>
+        <input id="in-login" class="input-login" type="email" placeholder="Digite seu email">
+        <label for="in-password" class="label-login" >Password</label>
+        <input id="in-password" class="input-login" type="password" placeholder="Digite sua senha">
+    </div>
+    <button id="btnLogin" class="btn-login">Entrar</button>
+    <div class="container-google">
+        <img src="./public/google-icon.png" width="20rem" height="20rem">
+        <button class="btn-google" id="btn_auth">Login com Google</button>
+    </div>
 </body>
-
 </html>

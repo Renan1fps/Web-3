@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/create-anime.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Cadastro de Anime</title>
+</head>
+
+<body>
+    <header class="header-main">
+        <div class="dropdown">
+            <div class="profile-circle" id="profileCircle">
+                <img src="./public/coringado.jpeg" alt="Sua Foto">
+            </div>
+            <div class="dropdown-content">
+                <a id="create-anime" href="./main.html">Inicio</a>
+                <a id="create-anime" href="./create-user.html">Usuários</a>
+                <a href="./index.html">Logout</a>
+            </div>
+        </div>
+        <div class="site-name">MMR animes</div>
+    </header>
+    <div class="center-container">
+        <div class="anime-form">
+            <h1>Cadastro de Anime</h1>
+            <label for="nome">Nome do Anime:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="url">Url imagem</label>
+            <input type="text" id="url" name="url" required>
+
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" name="descricao" rows="4" required></textarea>
+
+            <button id="btn-create-anime">Cadastrar</button>
+        </div>
+    </div>
+    <script src="./js/anime.js"></script>
+</body>
+
+</html>

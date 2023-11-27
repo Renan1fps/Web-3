@@ -1,11 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Lista de Animes</title>
 </head>
-<body>
-    <h1> Opannnn</h1>
+
+<body class="body-main">
+    <header class="header-main">
+        <div class="dropdown">
+            <div class="profile-circle" id="profileCircle">
+                <img src="./public/coringado.jpeg" alt="Sua Foto">
+            </div>
+            <div class="dropdown-content">
+                <a id="create-user" href="./create-user.html">Listar Usuários</a>
+                <a id="create-anime" href="./create-anime.html">Cadastrar animes</a>
+                <a href="./index.html">Logout</a>
+            </div>
+        </div>
+        <div class="site-name">MMR animes</div>
+    </header>
+    <div class="container-main">
+        <h1 class="h1-main">Últimos Lançamentos</h1>
+        <div id="anime-container" class="anime-container"></div>
+        <h1 class="h1-main" >Mais populares</h1>
+        <div id="anime-containe" class="anime-container"></div>
+    </div>
+    <footer>
+        <button id="faleConoscoBtn">Fale Conosco</button>
+    </footer>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Fale Conosco</h2>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email">
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" name="descricao" rows="4" cols="50"></textarea>
+            <button id="enviarBtn">Enviar</button>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
 </body>
+
 </html>

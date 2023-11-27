@@ -1,0 +1,76 @@
+body {
+  background-image: url("../public/log-in-hime.png"), url("../public/log-in-yuzu.png");
+  background-size: auto; 
+  background-position: 33% center,  66% center;
+  background-repeat: no-repeat;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 1rem;
+  height: 100vh;
+}
+
+.container-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(21, 20, 24);
+  height: 20rem;
+  width: 30rem;
+  gap: 1.5rem;
+  border-radius: 0.2rem;
+  padding-bottom: 1rem;
+}
+
+.container-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(204, 204, 204);
+  border-radius: 0.1rem;
+  padding: 0.3rem;
+  cursor: pointer;
+  width: 10%;
+}
+
+.btn-google {
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+  width: 80%;
+}
+
+.btn-login {
+  background-color: rgb(216, 104, 40);
+  color: aliceblue;
+  border: none;
+  cursor: pointer;
+  width: 11%;
+  border-radius: 0.1rem;
+  padding: 0.3rem;
+  padding: 0.3rem;
+}
+
+.input-login {
+  width: 80%;
+  height: 2rem;
+}
+
+.header-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: aliceblue;
+}
+
+.label-login{
+  align-self: flex-start;
+  color: aliceblue;
+  margin-left: 2.6rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
