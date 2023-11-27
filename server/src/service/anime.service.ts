@@ -30,11 +30,15 @@ export class AnimeService {
       throw new Error("Anime not found");
     }
 
+    if(data.popularity){
+      data.popularity = data.popularity + animeExists.popularity;
+    }
+
     return this.animeRepository.update(id, data);
   }
 
-  static async getAll() {
-    return this.animeRepository.selectMany({});
+  static async getAll(searchParams: any) {
+    return this.animeRepository.selectMany({}, undefined,  { ...searchParams });
   }
 
   static async delete(id: string) {

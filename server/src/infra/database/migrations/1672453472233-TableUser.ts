@@ -30,10 +30,12 @@ export class TableUser1672453472233 implements MigrationInterface {
 					{
 						name: "str_password",
 						type: "varchar",
+						isNullable: true,
 					},
 					{
 						name: "int_profile_type",
 						type: "int",
+						isNullable: true
 					},
 					{
 						name: "str_create_by",

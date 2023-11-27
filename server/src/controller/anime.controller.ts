@@ -33,6 +33,8 @@ export class AnimeController {
     try {
       const id = req.params.id;
       const body = req.body;
+      console.log('BODY', req.body);
+      
       response = await this.animeService.update(id, body);
     } catch (err: any) {
       console.log(err);
@@ -41,10 +43,11 @@ export class AnimeController {
     return res.status(200).json(response);
   }
 
-  static async getAll(_req: Request, res: Response) {
+  static async getAll(req: Request, res: Response) {
     let response;
     try {
-      response = await this.animeService.getAll()
+      console.log('REQ', req.query)
+      response = await this.animeService.getAll(req.query)
     } catch (err: any) {
       console.log(err);
       res.status(500).json({ err: err.message });

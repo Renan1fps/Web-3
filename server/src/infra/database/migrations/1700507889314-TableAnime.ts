@@ -28,6 +28,11 @@ export class TableAnime1700507889314 implements MigrationInterface {
 						isNullable: true,
 					},
 					{
+						name: "int_popularity",
+						type: "int",
+						default: 0
+					},
+					{
 						name: "str_create_by",
 						type: "varchar",
 						isNullable: true,

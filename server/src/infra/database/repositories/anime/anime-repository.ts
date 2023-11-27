@@ -1,59 +1,69 @@
-
-import { Repository, } from "typeorm";
+import { Repository } from "typeorm";
+import { DatabaseProvider, AnimeEntity } from "../repository-protocols";
 import {
-	DatabaseProvider,
-	AnimeEntity,
-} from "../repository-protocols";
-import { AnimeRepositoryInterface, WhereAnime } from "./anime-repository.interface";
+  AnimeRepositoryInterface,
+  WhereAnime,
+} from "./anime-repository.interface";
 
 export class AnimeRepository implements AnimeRepositoryInterface {
-	private readonly repository: Repository<AnimeEntity>;
+  private readonly repository: Repository<AnimeEntity>;
 
-	constructor() {
-		this.repository = DatabaseProvider.getRepository(AnimeEntity);
-	}
+  constructor() {
+    this.repository = DatabaseProvider.getRepository(AnimeEntity);
+  }
 
-	async create(anime: AnimeEntity): Promise<AnimeEntity> {
-		const newAnime = this.repository.create(anime);
-		const response = await this.repository.save(newAnime);
+  async create(anime: AnimeEntity): Promise<AnimeEntity> {
+    const newAnime = this.repository.create(anime);
+    const response = await this.repository.save(newAnime);
 
-		return response;
-	}
+    return response;
+  }
 
-	async update(id: string, anime: AnimeEntity): Promise<AnimeEntity> {
-		await this.repository.update(id, anime);
-		const response = (await this.repository.findOneBy({ id })) as AnimeEntity;
-		return response;
-	}
+  async update(id: string, anime: AnimeEntity): Promise<AnimeEntity> {
+    await this.repository.update(id, anime);
+    const response = (await this.repository.findOneBy({ id })) as AnimeEntity;
+    return response;
+  }
 
-	async softDeleteById(id: string, anime: AnimeEntity): Promise<void> {
-		await this.repository.update({ id }, anime);
-	}
+  async softDeleteById(id: string, anime: AnimeEntity): Promise<void> {
+    await this.repository.update({ id }, anime);
+  }
 
-	async select(where: WhereAnime, options?: string[]): Promise<AnimeEntity | null> {
-		const response = await this.repository.findOne({
-			where: { ...where },
-			...(options && { relations: options })
-		});
+  async select(
+    where: WhereAnime,
+    options?: string[]
+  ): Promise<AnimeEntity | null> {
+    const response = await this.repository.findOne({
+      where: { ...where },
+      ...(options && { relations: options }),
+    });
 
-		return response;
-	}
+    return response;
+  }
 
-	async selectMany(where: WhereAnime, options?: string[]): Promise<AnimeEntity[]> {
-		const response = await this.repository.find({
-			where: { ...where },
-			...(options && { relations: options }),
-		});
+  async selectMany(
+    where: WhereAnime,
+    options?: string[],
+	order?: any
+  ): Promise<AnimeEntity[]> {
+    const response = await this.repository.find({
+      where: { ...where },
+      order: order? order : undefined,
+      ...(options && { relations: options }),
+    });
 
-		return response;
-	}
+    return response;
+  }
 
-	async selectById(id: string, options?: string[]): Promise<AnimeEntity | null> {
-		const response = await this.repository.findOne({
-			where: { id },
-			...(options && { relations: options }),
-		});
+  async selectById(
+    id: string,
+    options?: string[]
+  ): Promise<AnimeEntity | null> {
+    const response = await this.repository.findOne({
+      where: { id },
+      ...(options && { relations: options }),
+    });
 
-		return response;
-	}
+    return response;
+  }
 }

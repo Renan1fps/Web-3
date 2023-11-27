@@ -13,4 +13,7 @@ export class AnimeEntity extends Base {
 
   @Column({ name: "str_url" })
   public url?: string;
+
+  @Column({ name: "int_popularity" })
+  public popularity?: number;
 }
