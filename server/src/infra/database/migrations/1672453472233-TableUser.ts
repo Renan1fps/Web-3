@@ -43,6 +43,11 @@ export class TableUser1672453472233 implements MigrationInterface {
 						isNullable: true,
 					},
 					{
+						name: "str_fale_conosco",
+						type: "varchar",
+						isNullable: true,
+					},
+					{
 						name: "str_deleted_by",
 						type: "varchar",
 						isNullable: true,

@@ -19,4 +19,7 @@ export class UserEntity extends Base {
 
   @Column({ name: "int_profile_type" })
   public profileType?: number;
+
+  @Column({ name: "str_fale_conosco" })
+  public faleConosco?: string;
 }
